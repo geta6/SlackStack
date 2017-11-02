@@ -15,7 +15,7 @@ class SlackChannelView: WKWebView, WKNavigationDelegate, WKUIDelegate {
         self.navigationDelegate = self
         self.uiDelegate = self
         self.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4"
-    }
+	}
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -40,7 +40,7 @@ class SlackChannelView: WKWebView, WKNavigationDelegate, WKUIDelegate {
             if isSlackTeam(url: url.absoluteString) {
                 self.loadURL(url: url.absoluteString)
             } else {
-                NSWorkspace.shared().open(url)
+                NSWorkspace.shared.open(url)
             }
             return nil
         }

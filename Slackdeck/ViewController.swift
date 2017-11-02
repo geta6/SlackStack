@@ -23,7 +23,7 @@ class ViewController: NSViewController {
     }
 
     override func loadView() {
-        if let frame = NSScreen.main()?.frame {
+        if let frame = NSScreen.main?.frame {
             self.view = NSView(frame: NSMakeRect(0, 0, frame.width * 0.8, frame.height * 0.8))
         }
     }
@@ -105,10 +105,10 @@ class ViewController: NSViewController {
             NSStackView() ※ { sv in
                 sv.spacing = 0.0
                 sv.distribution = .fillEqually
-                sv.setViews(row, in: .leading)
+                sv.setViews(row, in: NSStackView.Gravity.leading)
             }
         }
-        stackView.setViews(views, in: .leading)
+        stackView.setViews(views, in: NSStackView.Gravity.leading)
     }
 
     // MARK: - URL
